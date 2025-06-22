@@ -10,6 +10,14 @@ class ResultController extends Controller
     {
         return view('index');
     }
+    public function index1()
+    {
+        return view('demo1');
+    }
+    public function index2()
+    {
+        return view('demo2');
+    }
 
     public function fetchIndividual(Request $request)
     {
