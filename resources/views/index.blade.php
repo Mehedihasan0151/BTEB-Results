@@ -8,16 +8,29 @@
 <body class="bg-gray-100 p-6">
   <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
     <h2 class="text-2xl font-bold mb-4">Individual Result Checker</h2>
-    <form method="GET" action="{{ route('individual.result') }}" class="space-y-4">
-      @csrf
-      <input name="roll" class="w-full border p-2 rounded" placeholder="Roll Number" required>
-      <select name="exam" class="w-full border p-2 rounded">
-        <option>DIPLOMA IN ENGINEERING</option>
-        <option>DIPLOMA IN ENGINEERING (ARMY)</option>
-        <option>DIPLOMA IN FORESTRY</option>
-      </select>
-      <input name="regulation" class="w-full border p-2 rounded" value="2016" required>
-      <button class="bg-blue-600 text-white px-4 py-2 rounded">Check Result</button>
+    @if (session('error'))
+      <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">Error: </strong>
+          <span class="block sm:inline">{{ session('error') }}</span>
+      </div>
+    @endif
+
+    {{-- Form --}}
+    <form method="POST" action="{{ route('individual.result') }}" class="space-y-4">
+        @csrf
+        <input name="roll" class="w-full border p-2 rounded" placeholder="Roll Number" required>
+
+        <select name="exam" class="w-full border p-2 rounded">
+            <option>DIPLOMA IN ENGINEERING</option>
+            <option>DIPLOMA IN ENGINEERING (ARMY)</option>
+            <option>DIPLOMA IN FORESTRY</option>
+        </select>
+
+        <input name="regulation" class="w-full border p-2 rounded" value="2022" required>
+
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full">
+            Check Result
+        </button>
     </form>
 
     <hr class="my-8">

@@ -41,7 +41,6 @@
           <input
             name="roll"
             type="text"
-            required
             placeholder="Roll Number"
             class="input input-bordered w-full bg-white bg-opacity-80 text-black"
           />
@@ -55,8 +54,7 @@
           <input
             name="regulation"
             type="text"
-            required
-            value="2016"
+            value="2022"
             placeholder="Regulation Year"
             class="input input-bordered w-full bg-white bg-opacity-80 text-black"
           />
