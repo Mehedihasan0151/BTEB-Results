@@ -36,7 +36,7 @@
 
       <div class="flex flex-col-reverse md:flex-row md:items-center gap-8">
         <!-- Laravel Form Starts -->
-        <form method="GET" action="{{ route('individual.result') }}" class="md:w-[50%] flex flex-col gap-5">
+        <form method="POST" action="{{ route('individual.result') }}" class="md:w-[50%] flex flex-col gap-5">
           @csrf
           <input
             name="roll"
